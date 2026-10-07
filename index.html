@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#FFF6D8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Happy Birthday Mine!</title>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-layer="tunggu">
+
+<div class="latar" aria-hidden="true">
+  <div class="latar-sinar"></div>
+  <div class="latar-titik"></div>
+  <div id="wadahKilau"></div>
+</div>
+<div id="selimut" aria-hidden="true"></div>
+
+<audio id="musikTunggu" src="tunggu.mp3" loop preload="auto"></audio>
+<audio id="musikUtama" preload="auto"></audio>
+
+<section id="layerTunggu" class="layer aktif masuk" data-nama="tunggu">
+  <div class="tunggu-inner">
+    <h1 class="judul-tunggu">Menuju<br><span class="teks-sorot">Usia 22</span></h1><br>
+    <p class="sub-tunggu">Lilinnya belum boleh dinyalakan dulu, ya…</p>
+
+    <div class="timer" role="timer" aria-label="hitung mundur">
+      <div class="sel"><span id="nilaiJam">00</span><small>jam</small></div>
+      <div class="titik">:</div>
+      <div class="sel"><span id="nilaiMenit">00</span><small>menit</small></div>
+      <div class="titik">:</div>
+      <div class="sel"><span id="nilaiDetik">00</span><small>detik</small></div>
+    </div>
+
+    <div class="ketik"><span id="teksKetik"></span><span class="kursor">|</span></div>
+
+    <p class="petunjuk">Coba ketuk layarnya!</p>
+  </div>
+</section>
+
+<button id="tombolMusik" class="tombol-musik-tunggu" type="button">Nyalakan Musik</button>
+
+<section id="layerLilin" class="layer" data-nama="lilin">
+  <div class="lilin-inner">
+    <h2 class="judul-lilin">Waktunya<br>Tiup Lilin!</h2>
+    <p class="sub-lilin">Pejamkan mata, buat satu permohonan…<br>lalu tahan jari di kue sampai api padam</p>
+
+    <div class="kue" id="kueUltah">
+      <div class="lilin">
+        <div class="api-cahaya"></div>
+        <div class="api"></div>
+        <div class="asap" aria-hidden="true"></div>
+        <div class="cincin" aria-hidden="true"></div>
+        <div class="sumbu"></div>
+        <div class="batang"></div>
+      </div>
+      <div class="kue-atas"></div>
+      <div class="kue-bawah"></div>
+      <div class="piring"></div>
+    </div>
+    <p class="teks-tiup" id="teksTiup"></p>
+  </div>
+</section>
+
+<section id="layerKejutan" class="layer gulir" data-nama="kejutan">
+  <div id="wadahBalon" aria-hidden="true"></div>
+
+  <div class="kejutan-inner">
+    <header class="kejutan-header">
+      <br>
+      <span class="pita pita-goyang" id="sapaanHeader">🎉 horeeee!</span>
+      <br><h1 class="judul-kejutan">Selamat Ulang Tahun ke-<span class="angka-22">22</span>!</h1>
+    </header>
+
+    <div class="panel-wadah">
+
+      <div class="panel aktif" data-panel="ucapan">
+        <div class="ucapan-kartu">
+          <p class="ucapan-teks">Happy 22nd Birthday, Mine! 🌻 Semoga di usia yang baru ini, langkahmu selalu diringankan, hatimu selalu dikuatkan, dan senyum manis itu tidak pernah pudar.</p>
+        </div>
+<br>
+<div class="grid-foto" id="gridFoto"></div>
+      </div>
+
+      <div class="panel" data-panel="foto">
+        <div class="galeri-wadah">
+          <figure class="galeri" id="galeri">
+            <div class="galeri-trek" id="galeriTrek">
+              <div class="slide"><img src="foto1.jpg" alt="foto 1"><span class="label-foto">My Seminar Proposal</span></div>
+              <div class="slide"><img src="foto2.jpg" alt="foto 2"><span class="label-foto">Your Seminar Hasil</span></div>
+              <div class="slide"><img src="foto3.jpg" alt="foto 3"><span class="label-foto">Your Ujian Tutup</span></div>
+              <div class="slide"><img src="foto4.jpg" alt="foto 4"><span class="label-foto">My Ujian Tutup</span></div>
+              <div class="slide"><img src="foto5.jpg" alt="foto 5"><span class="label-foto">Pantai Tanjung Layar Putih</span></div>
+              <div class="slide"><img src="foto6.jpg" alt="foto 6"><span class="label-foto">Kolam Bidadari Tompobulu Maros</span></div>
+            </div>
+            <span class="galeri-jeda" id="galeriJeda">⏸ jeda</span>
+          </figure>
+          <div class="galeri-titik" id="galeriTitik"></div>
+          <figcaption class="galeri-keterangan">Geser pakai jari, ketuk untuk jeda/lanjut</figcaption>
+        </div>
+      </div>
+
+      <div class="panel" data-panel="main">
+        <p class="panel-keterangan">Temukan semua pasangan foto kita!</p>
+        <div class="memo-papan" id="memoPapan"></div>
+        <p class="panel-keterangan" id="memoStatus">Langkah: 0 • Pasangan: 0/6</p>
+        <button id="memoUlang" class="tombol-utama tombol-kecil" type="button">Acak Ulang Foto</button>
+        <div class="memo-menang" id="memoMenang">
+          <p class="memo-menang-judul">Yeay, semua ketemu! 🎉</p>
+        </div>
+      </div>
+
+      <div class="panel" data-panel="surat">
+        <p class="panel-keterangan">Surat ini cuma buat kamu… jangan disebar ya 🤫</p>
+        <article class="surat">
+          <h3>Happy 22nd Birthday, Mine!</h3>
+          <p>Karena lilinnya udah berhasil kamu tiup dan tadi udah selesai make a wish, sekarang kamu resmi deh memasuki umur yang baru. Senang banget rasanya Nana bisa nemenin dan ikut ngerayain hari ulang tahunmu kali ini.</p>
+          <p>Umur 22 katanya sih udah makin dewasa ya, tapi tenang aja, kalau lagi sama Nana kamu tetep boleh kok jadi orang yang paling manja, konyol, atau apa adanya. Makasih banyak ya, Mine, buat semua cerita, tawa, dan waktu-waktu seru yang udah kita lewatin bareng sampai sekarang.</p>
+          <p>Terima kasih juga ya udah berjuang dan bertahan sejauh ini. Nana tahu ada banyak hari-hari capek yang harus kamu lewatin, tapi kamu terbukti hebat banget bisa ngelewatin itu semua dengan baik.</p>
+          <p>Di umur yang baru ini, pesan Nana cuma satu: tolong kurangi makan pedas dan jangan terlalu banyak khawatir ya. Semoga semua urusanmu, rencana kamu ke depan, atau apa pun yang lagi kamu kejar sekarang dilancarkan dan dimudahkan. Nana selalu doain yang terbaik buat kamu.</p>
+          <p>Jangan lupa buat selalu sayang sama dirimu sendiri, ya. Kalau kamu lagi capek, butuh tempat cerita, atau sekadar pengen sandaran, kamu tahu kan harus ke mana? Pintu Nana selalu terbuka 24/7 buat kamu.</p>
+          <p>Selamat ulang tahun yang ke-22, Mine! Yuk, kita bikin lebih banyak momen bahagia dan seru lagi setelah hari ini.</p>
+          <p class="tanda-tangan">— Nana 💛</p>
+        </article>
+      </div>
+
+      <div class="panel" data-panel="musik">
+        <p class="panel-keterangan">Ketuk piringannya untuk jeda/lanjut</p>
+
+        <div class="piringan-besar">
+          <button class="piringan piringan-jumbo" id="piringanPanel" type="button" aria-label="putar atau jeda musik"></button>
+          <p class="lagu-aktif" id="laguAktif">Gellen Martadinata</p>
+        </div>
+
+        <div class="daftar-lagu" id="daftarLagu"></div>
+        <p class="panel-keterangan">Lagunya terus berputar meskipun pindah menu</p>
+      </div>
+
+      <footer class="kaki">Made with love for Mine 💛</footer>
+    </div>
+  </div>
+
+  <nav class="menu-bawah" id="menuBawah" aria-label="menu kejutan">
+    <button class="menu-item aktif" data-target="ucapan" type="button"><span class="menu-ikon">🎂</span><small>Ucapan</small></button>
+    <button class="menu-item" data-target="foto" type="button"><span class="menu-ikon">📸</span><small>Foto</small></button>
+    <button class="menu-item" data-target="main" type="button"><span class="menu-ikon">🎮</span><small>Main</small></button>
+    <button class="menu-item" data-target="surat" type="button"><span class="menu-ikon">💌</span><small>Surat</small></button>
+    <button class="menu-item" data-target="musik" type="button"><span class="menu-ikon">🎵</span><small>Musik</small></button>
+  </nav>
+</section>
+
+<div class="foto-layar" id="fotoLayar">
+  <img id="fotoLayarImg" src="" alt="foto diperbesar">
+  <p>ketuk di mana saja untuk menutup</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
