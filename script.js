@@ -1,6 +1,6 @@
 const MODE_UJI = false;
 
-const WAKTU_TARGET = new Date(2026, 9, 8, 0, 50, 0); // 8 Oktober 2026, 00:50:00
+const WAKTU_TARGET = new Date(2026, 9, 8, 8, 0, 0); // 8 Oktober 2026, 08:00:00
 
 const PESAN_KETIK = [
   "Hai Mine!",
